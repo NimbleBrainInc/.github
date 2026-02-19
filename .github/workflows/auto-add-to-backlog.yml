@@ -1,0 +1,25 @@
+name: Auto-add issues to Backlog
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: PVT_kwDOCW6FW84BPU-D
+
+jobs:
+  add-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add open issues to Backlog
+        env:
+          GH_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+        run: |
+          # Find all open issues across the org that aren't already in the project
+          gh search issues --owner NimbleBrainInc --state open --limit 200 \
+            -- -project:NimbleBrainInc/10 \
+            --json url --jq '.[].url' | while read -r issue_url; do
+            echo "Adding: $issue_url"
+            gh project item-add 10 --owner NimbleBrainInc --url "$issue_url" || true
+          done

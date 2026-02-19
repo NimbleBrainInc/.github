@@ -18,8 +18,8 @@ jobs:
         run: |
           # Find all open issues across the org that aren't already in the project
           gh search issues --owner NimbleBrainInc --state open --limit 200 \
-            -- -project:NimbleBrainInc/10 \
-            --json url --jq '.[].url' | while read -r issue_url; do
+            --json url --jq '.[].url' \
+            -- -project:NimbleBrainInc/10 | while read -r issue_url; do
             echo "Adding: $issue_url"
             gh project item-add 10 --owner NimbleBrainInc --url "$issue_url" || true
           done

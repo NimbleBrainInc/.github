@@ -21,5 +21,10 @@ jobs:
             --json url --jq '.[].url' \
             -- -project:NimbleBrainInc/10 | while read -r issue_url; do
             echo "Adding: $issue_url"
-            gh project item-add 10 --owner NimbleBrainInc --url "$issue_url" || true
+            # Get the issue's node ID and add via GraphQL (gh project item-add has a PAT bug)
+            NODE_ID=$(gh api graphql -f query='query($url:URI!){resource(url:$url){...on Issue{id}}}' -f url="$issue_url" --jq '.data.resource.id')
+            if [ -n "$NODE_ID" ]; then
+              gh api graphql -f query='mutation($project:ID!,$item:ID!){addProjectV2ItemById(input:{projectId:$project,contentId:$item}){item{id}}}' \
+                -f project="${{ env.PROJECT_ID }}" -f item="$NODE_ID" --silent || true
+            fi
           done

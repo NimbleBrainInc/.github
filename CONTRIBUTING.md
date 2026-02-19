@@ -99,6 +99,10 @@ Publishing happens via GitHub Actions when you create a release tag:
 - Forked servers use the `-mcpb.N` suffix
 - Bump minor for new tools, patch for fixes
 
+## Priority & Triage
+
+Issues are triaged using priority levels P0 (critical) through P3 (low). See [reference/priorities.md](reference/priorities.md) for definitions and guidelines.
+
 ## Communication
 
 - [Discord](https://nimblebrain.ai/discord) for questions and discussion

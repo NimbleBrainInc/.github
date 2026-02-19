@@ -1,46 +1,57 @@
-# NimbleBrain
+# NimbleBrain HQ
 
-**The first business automation platform you talk to.**
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](../LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](../CONTRIBUTING.md)
+[![Discord](https://img.shields.io/badge/Discord-Join%20us-5865F2?logo=discord&logoColor=white)](https://nimblebrain.ai/discord)
+[![X (Twitter)](https://img.shields.io/badge/Follow-@nimblebrain-000000?logo=x&logoColor=white)](https://x.com/nimblebrain)
+[![mpak Registry](https://img.shields.io/badge/mpak-registry-purple)](https://mpak.dev)
 
-No flowcharts. No setup. Just describe what you need, and Nira, your AI operations assistant, builds and runs it for you.
+This is where NimbleBrain's open source work gets coordinated. Issues, reference materials, and community.
 
-[Learn more at nimblebrain.ai →](https://www.nimblebrain.ai)
+## Start Contributing (90 seconds)
 
-<p align="center">
-  <a href="https://www.nimblebrain.ai">
-    <img src="./nira-in-action.png" alt="Nira in action" width="600">
-  </a>
-</p>
+```bash
+npm install -g @nimblebrain/mpak
+mpak skill install @nimblebraininc/nimblebrain-contributor
+mpak skill install @nimblebraininc/build-mcpb
+```
 
-## What is NimbleBrain?
+Then open Claude Code anywhere:
 
-Most automation tools make you think like a programmer: dragging boxes, connecting nodes, debugging flows. NimbleBrain is different.
+```bash
+claude
+> I'm a new contributor, help me get started
+```
 
-**You talk. Nira does the rest.**
+The `nimblebrain-contributor` skill checks your environment, orients you on the project, and helps you pick work. The `build-mcpb` skill handles the full MCP server build pipeline.
 
-- "Send me a Slack summary of all open support tickets every morning"
-- "When a new lead comes in, check if they're in our CRM and alert the sales team"
-- "Screen resumes against this job description and rank the top 10"
+See [contributor-toolkit](https://github.com/NimbleBrainInc/contributor-toolkit) for details on the skills.
 
-Nira understands what you need, connects to your tools, and handles it automatically.
+## What We Build
 
-## Get Started
+NimbleBrain is a business automation platform powered by AI. We connect to the tools operators already use (Notion, HubSpot, Linear, Stripe, etc.) through **MCP servers**, and compose those tools into reusable **skills**.
 
-|                                                      |                             |
-| :--------------------------------------------------- | :-------------------------- |
-| [**Try NimbleBrain**](https://studio.nimblebrain.ai) | Start automating in minutes |
-| [**Documentation**](https://docs.nimblebrain.ai)     | Guides and API reference    |
-| [**Website**](https://www.nimblebrain.ai)            | See how it works            |
+Every deliverable is a **server + skills combo**:
 
-## Open Source
+- An MCP server that exposes tools from an external service
+- 2-3 companion skills that compose those tools into practical workflows
 
-We're building in the open. These tools power parts of our platform:
+## Community
 
-- [**nimbletools-core**](https://github.com/NimbleBrainInc/nimbletools-core) - Deploy AI tools as production services
-- [**ntcli**](https://github.com/NimbleBrainInc/ntcli) - Command-line interface for developers
-- [**mcp-registry**](https://github.com/NimbleBrainInc/mcp-registry) - Community registry of MCP servers
+- [Discord](https://nimblebrain.ai/discord)
+- [X / Twitter](https://x.com/nimblebrain)
+- [GitHub Discussions](https://github.com/orgs/NimbleBrainInc/discussions)
 
-## Connect
+## Links
 
-- [Discord](https://www.nimblebrain.ai/discord) - Join the community
-- [Twitter](https://twitter.com/nimblebrain) - Follow for updates
+| Resource            | URL                                                                                                    |
+| ------------------- | ------------------------------------------------------------------------------------------------------ |
+| Contributor Toolkit | [github.com/NimbleBrainInc/contributor-toolkit](https://github.com/NimbleBrainInc/contributor-toolkit) |
+| NimbleBrain         | [nimblebrain.ai](https://nimblebrain.ai)                                                               |
+| Documentation       | [docs.nimblebrain.ai](https://docs.nimblebrain.ai)                                                     |
+| mpak Registry       | [mpak.dev](https://mpak.dev)                                                                           |
+| MCP Specification   | [modelcontextprotocol.io](https://modelcontextprotocol.io)                                             |
+
+## License
+
+Apache 2.0

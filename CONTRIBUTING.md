@@ -31,7 +31,7 @@ cd mcp-<name>
 
 ```bash
 claude
-> /build-mcpb
+> /mcpb
 ```
 
 The skill scaffolds the server, walks you through implementing tools, validates the bundle, and authors companion skills.

@@ -19,7 +19,7 @@
 
 | Tool        | Purpose                                    | Install                                                |
 | ----------- | ------------------------------------------ | ------------------------------------------------------ |
-| mpak CLI    | Package manager for MCP bundles and skills | `npm install -g @nimblebrain/mpak`                     |
+| mpak CLI    | Package manager for MCP bundles            | `npm install -g @nimblebrain/mpak`                     |
 | Claude Code | AI coding assistant                        | [claude.ai/claude-code](https://claude.ai/claude-code) |
 | uv          | Python package manager                     | [docs.astral.sh/uv](https://docs.astral.sh/uv/)        |
 | ruff        | Python linter/formatter                    | [docs.astral.sh/ruff](https://docs.astral.sh/ruff/)    |

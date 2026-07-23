@@ -18,7 +18,7 @@ A packaged, portable MCP server. Contains the server code, dependencies, manifes
 
 ### mpak
 
-The NimbleBrain package registry for MCP bundles and skills. Used to discover, install, and publish integrations.
+The NimbleBrain package registry for MCP bundles. Used to discover, install, and publish integrations.
 
 ### Skill
 

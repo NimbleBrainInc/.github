@@ -11,8 +11,8 @@ This is where NimbleBrain's open source work gets coordinated. Issues, reference
 ## Start Contributing (90 seconds)
 
 ```bash
-npx skills add nimblebraininc/skills --skill nimblebrain-contributor
-npx skills add nimblebraininc/skills --skill build-mcpb
+npx skills add nimblebraininc/skills --skill contributor --agent claude-code -y
+npx skills add nimblebraininc/skills --skill mcpb --agent claude-code -y
 ```
 
 Then open Claude Code anywhere:
@@ -22,7 +22,7 @@ claude
 > I'm a new contributor, help me get started
 ```
 
-The `nimblebrain-contributor` skill checks your environment, orients you on the project, and helps you pick work. The `build-mcpb` skill handles the full MCP server build pipeline.
+The `contributor` skill checks your environment, orients you on the project, and helps you pick work. The `mcpb` skill handles the full MCP server build pipeline.
 
 See [nimblebraininc/skills](https://github.com/NimbleBrainInc/skills) for details on the skills.
 

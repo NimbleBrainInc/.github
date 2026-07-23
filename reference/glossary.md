@@ -18,11 +18,11 @@ A packaged, portable MCP server. Contains the server code, dependencies, manifes
 
 ### mpak
 
-The NimbleBrain package registry for MCP bundles and skills. Used to discover, install, and publish integrations.
+The NimbleBrain package registry for MCP bundles. Used to discover, install, and publish integrations.
 
 ### Skill
 
-A composable unit of behavior for AI agents. Combines context, instructions, and tool orchestration into a reusable package. Published as `.skill` files to the mpak registry.
+A composable unit of behavior for AI agents. Combines context, instructions, and tool orchestration into a reusable package, distributed through the open [Agent Skills standard](https://agentskills.io).
 
 ### Companion Skill
 

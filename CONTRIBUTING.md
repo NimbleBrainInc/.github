@@ -31,7 +31,7 @@ cd mcp-<name>
 
 ```bash
 claude
-> /build-mcpb
+> /mcpb
 ```
 
 The skill scaffolds the server, walks you through implementing tools, validates the bundle, and authors companion skills.
@@ -65,7 +65,6 @@ Start with API key auth. OAuth2 servers should be attempted after you've shipped
 
 - `SKILL.md` with complete frontmatter and metadata
 - Proper tags, category, triggers, examples
-- `mpak skill validate` passes
 - References MCP server dependency
 - At least 2 usage examples
 
@@ -82,8 +81,7 @@ Start with API key auth. OAuth2 servers should be attempted after you've shipped
 
 ### Skills
 - [ ] 2-3 companion skills authored
-- [ ] `mpak skill validate` passes for each
-- [ ] `mpak skill pack` succeeds
+- [ ] Each ships as a `skill://` resource embedded in the server bundle
 
 ## Publishing
 

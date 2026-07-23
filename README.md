@@ -11,9 +11,8 @@ This is where NimbleBrain's open source work gets coordinated. Issues, reference
 ## Start Contributing (90 seconds)
 
 ```bash
-npm install -g @nimblebrain/mpak
-mpak skill install @nimblebraininc/nimblebrain-contributor
-mpak skill install @nimblebraininc/build-mcpb
+npx skills add nimblebraininc/skills --skill contributor --agent claude-code -y
+npx skills add nimblebraininc/skills --skill mcpb --agent claude-code -y
 ```
 
 Then open Claude Code anywhere:
@@ -23,9 +22,9 @@ claude
 > I'm a new contributor, help me get started
 ```
 
-The `nimblebrain-contributor` skill checks your environment, orients you on the project, and helps you pick work. The `build-mcpb` skill handles the full MCP server build pipeline.
+The `contributor` skill checks your environment, orients you on the project, and helps you pick work. The `mcpb` skill handles the full MCP server build pipeline.
 
-See [contributor-toolkit](https://github.com/NimbleBrainInc/contributor-toolkit) for details on the skills.
+See [nimblebraininc/skills](https://github.com/NimbleBrainInc/skills) for details on the skills.
 
 ## What We Build
 
@@ -46,7 +45,7 @@ Every deliverable is a **server + skills combo**:
 
 | Resource            | URL                                                                                                    |
 | ------------------- | ------------------------------------------------------------------------------------------------------ |
-| Contributor Toolkit | [github.com/NimbleBrainInc/contributor-toolkit](https://github.com/NimbleBrainInc/contributor-toolkit) |
+| Skills              | [github.com/NimbleBrainInc/skills](https://github.com/NimbleBrainInc/skills)                           |
 | NimbleBrain         | [nimblebrain.ai](https://nimblebrain.ai)                                                               |
 | Documentation       | [docs.nimblebrain.ai](https://docs.nimblebrain.ai)                                                     |
 | mpak Registry       | [mpak.dev](https://mpak.dev)                                                                           |

@@ -1,0 +1,65 @@
+name: No AI attribution
+
+# Fails a pull request whose commit messages, title or body carry an AI
+# attribution trailer or footer. The commits are checked as well as the title and
+# body because a squash merge builds its message from all of them.
+#
+# Call it from a workflow triggered on pull_request with types
+# [opened, edited, synchronize, reopened]: `edited` re-checks a changed title or
+# body, `synchronize` re-checks new commits.
+#
+# The pulls commits endpoint returns at most 250 commits, which bounds what a
+# single PR can be checked for.
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  check:
+    name: No AI attribution
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check commit messages, title and body
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          TITLE: ${{ github.event.pull_request.title }}
+          BODY: ${{ github.event.pull_request.body }}
+        run: |
+          set -euo pipefail
+          if [ -z "$PR" ]; then
+            echo "::error::Call this workflow from a pull_request event."
+            exit 1
+          fi
+
+          pattern='co-authored-by:[[:space:]]*claude|claude-session:|generated with \[?claude|noreply@anthropic\.com'
+          found=0
+
+          check() {
+            local hits
+            if hits=$(grep -inE "$pattern"); then
+              echo "::error title=AI attribution::$1"
+              printf '%s\n' "$hits"
+              found=1
+            fi
+          }
+
+          check "PR title" <<<"$TITLE"
+          check "PR body" <<<"$BODY"
+
+          # Every line of every commit message, prefixed with its commit's short sha.
+          # shellcheck disable=SC2016 # $sha is a jq variable, not a shell one
+          gh api --paginate "repos/$REPO/pulls/$PR/commits" \
+            --jq '.[] | .sha[0:7] as $sha | .commit.message | split("\n")[] | "\($sha) \(.)"' > commits.txt
+          check "Commit messages (squash merge builds its message from these)" < commits.txt
+
+          if [ "$found" -eq 1 ]; then
+            echo "Remove the attribution: amend or reword the commits, and edit the title or body."
+            exit 1
+          fi
+          echo "No AI attribution in the commits, title or body."

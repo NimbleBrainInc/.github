@@ -1,6 +1,6 @@
 # NimbleBrain HQ
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](../LICENSE)
+[![Licensing](https://img.shields.io/badge/Licensing-per%20repository-blue.svg)](../CONTRIBUTING.md#licensing)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](../CONTRIBUTING.md)
 [![Discord](https://img.shields.io/badge/Discord-Join%20us-5865F2?logo=discord&logoColor=white)](https://nimblebrain.ai/discord)
 [![X (Twitter)](https://img.shields.io/badge/Follow-@nimblebrain-000000?logo=x&logoColor=white)](https://x.com/nimblebrain)
@@ -53,4 +53,6 @@ Every deliverable is a **server + skills combo**:
 
 ## License
 
-Apache 2.0
+Each repository carries its own license: Apache-2.0 for libraries and services, MIT for
+code meant to be copied or bundled, CC-BY-4.0 for documentation. See
+[Licensing](../CONTRIBUTING.md#licensing). This repository is Apache-2.0.

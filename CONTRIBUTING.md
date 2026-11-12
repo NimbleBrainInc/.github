@@ -97,6 +97,31 @@ Publishing happens via GitHub Actions when you create a release tag:
 - Forked servers use the `-mcpb.N` suffix
 - Bump minor for new tools, patch for fixes
 
+## Licensing
+
+Every public NimbleBrain repository carries a `LICENSE` file at its root, and its package
+metadata (`pyproject.toml`, `package.json`) declares the same license. Code without one is
+"all rights reserved": nobody may use or copy it.
+
+Which license follows from what the repository is for:
+
+| The repository is | License | Examples |
+|---|---|---|
+| A library or service people run or depend on | Apache-2.0 | the runtime, mpak, the SDKs, pgbulkhead |
+| Code meant to be copied or bundled into someone else's work, or CI tooling | MIT | templates, MCP servers, Synapse apps and the Synapse SDK, skills, mcpb-pack |
+| Documentation or a specification | CC-BY-4.0 | docs sites, the mpak Trust Framework |
+
+Apache-2.0 carries an explicit patent grant, which matters for infrastructure others build
+on. MIT asks only that the notice be kept, which matters for code that gets copied or
+inlined into another project's output.
+
+Use the license's standard text unmodified: GitHub's copy (`gh api licenses/apache-2.0
+--jq .body`, `gh api licenses/mit --jq .body`) or choosealicense.com. GitHub detects a
+license only from its exact text. A server created from the template inherits the
+template's `LICENSE`.
+
+Contributions are accepted under the license of the repository they are made to.
+
 ## Priority & Triage
 
 Issues are triaged using priority levels P0 (critical) through P3 (low). See [reference/priorities.md](reference/priorities.md) for definitions and guidelines.

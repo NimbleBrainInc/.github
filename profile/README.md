@@ -8,32 +8,31 @@
 
 This is where NimbleBrain's open source work gets coordinated. Issues, reference materials, and community.
 
-## Start Contributing (90 seconds)
+## Start here
+
+NimbleBrain runs on your own machine. One command checks the machine, starts it in Docker and
+connects your coding agent to it:
 
 ```bash
-npx skills add nimblebraininc/skills --skill contributor --agent claude-code -y
-npx skills add nimblebraininc/skills --skill mcpb --agent claude-code -y
+npx nimblebrain
 ```
 
-Then open Claude Code anywhere:
+Or install the skill and ask your agent to "set up NimbleBrain":
 
 ```bash
-claude
-> I'm a new contributor, help me get started
+npx skills add nimblebraininc/skills --skill nimblebrain
 ```
 
-The `contributor` skill checks your environment, orients you on the project, and helps you pick work. The `mcpb` skill handles the full MCP server build pipeline.
-
-See [nimblebraininc/skills](https://github.com/NimbleBrainInc/skills) for details on the skills.
+To build for it, see the building skills in
+[nimblebraininc/skills](https://github.com/NimbleBrainInc/skills). To contribute to the runtime,
+start with its [CONTRIBUTING.md](https://github.com/NimbleBrainInc/nimblebrain/blob/main/CONTRIBUTING.md).
 
 ## What We Build
 
-NimbleBrain is a business automation platform powered by AI. We connect to the tools operators already use (Notion, HubSpot, Linear, Stripe, etc.) through **MCP servers**, and compose those tools into reusable **skills**.
-
-Every deliverable is a **server + skills combo**:
-
-- An MCP server that exposes tools from an external service
-- 2-3 companion skills that compose those tools into practical workflows
+> NimbleBrain is an open-source platform for running your business on AI. Everything is
+> included: agents, the apps they work in (a CRM, to-dos, memory, research and automations)
+> and 1,000+ connectors, on any model, in your own infrastructure. Our team sets it up and
+> runs it with you, or you run it yourself.
 
 ## Community
 
